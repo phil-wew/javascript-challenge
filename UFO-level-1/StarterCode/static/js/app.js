@@ -15,3 +15,4 @@ function tableDisplay(ufoSightings) {
         });
     });
 };
+tableDisplay(tableData);
