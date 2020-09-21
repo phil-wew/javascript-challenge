@@ -21,23 +21,22 @@ tableDisplay(tableData);
 
 // //////// Filtering Table ////////
 
+function deleteTbody() {
+    d3.select("tbody")
+        .selectAll("tr").remove()
+        .selectAll("td").remove();
+};
 
 // select filter button
 var button = d3.select("#filter-btn");
 
-// Select the form
-var form = d3.select("#form");
 
 //event handlers
-button.on("click", runEnter);
-form.on("submit", runEnter);
-
-
-//event handler function
-function runEnter() {
+button.on("click", function(event) {
 
     // Prevent the page from refreshing
     d3.event.preventDefault();
+    deleteTbody();
 
     // Select the input element and get the raw HTML node
     var inputElement = d3.select("#datetime");
@@ -45,7 +44,8 @@ function runEnter() {
     // Get the value property of the input element
     var inputValue = inputElement.property("value");
 
-    var filteredData = tableData.filter(ufo => ufo.datetime === inputValue)
+    var filteredData = tableData.filter(ufoSightings => ufoSightings.datetime === inputValue);
 
     tableDisplay(filteredData);
-};
+
+})
