@@ -21,12 +21,6 @@ tableDisplay(tableData);
 
 // //////// Filtering Table ////////
 
-function deleteTbody() {
-    d3.select("tbody")
-        .selectAll("tr").remove()
-        .selectAll("td").remove();
-};
-
 // select filter button
 var button = d3.select("#filter-btn");
 
@@ -36,7 +30,6 @@ button.on("click", function(event) {
 
     // Prevent the page from refreshing
     d3.event.preventDefault();
-    deleteTbody();
 
     // Select the input element and get the raw HTML node
     var inputElement = d3.select("#datetime");
