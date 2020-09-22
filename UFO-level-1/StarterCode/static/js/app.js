@@ -37,6 +37,7 @@ button.on("click", function(event) {
     // Get the value property of the input element
     var inputValue = inputElement.property("value");
 
+    // filter the table with input valie
     var filteredData = tableData.filter(ufoSightings => ufoSightings.datetime === inputValue);
 
     tableDisplay(filteredData);
