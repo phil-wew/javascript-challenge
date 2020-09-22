@@ -26,7 +26,7 @@ var button = d3.select("#filter-btn");
 
 
 //event handlers
-button.on("click", function(event) {
+button.on("click", function() {
 
     // Prevent the page from refreshing
     d3.event.preventDefault();
